@@ -3,14 +3,13 @@ package org.example;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
 import java.util.Base64;
 
-public class Main {
+public class MainHash {
     public static void main(String[] args) throws NoSuchAlgorithmException, UnsupportedEncodingException {
 
         //Example Using Hash Function MD5 / SHA-256
-        String password = "MySecureSecretGoesHere" + "MyNameGoesHere" + "AnotherPersonalDataGoesHere";
+        String password = "MySecureSecretGoesHere " + "MyNameGoesHere s" + "AnotherPersonalDataGoesHere";
 
         MessageDigest algorithmMD5 = MessageDigest.getInstance("MD5");
         byte[] messageDigestMD5 = algorithmMD5.digest(password.getBytes("UTF-8"));
@@ -33,20 +32,6 @@ public class Main {
         System.out.println(passwordHex);
 
 
-        //============================================================================================
-
-        //Example Using Base64 Codification
-
-        String passwordEncoded = null;
-
-        passwordEncoded = Base64.getEncoder().encodeToString(password.getBytes());
-
-        System.out.println("String encoded: " + passwordEncoded);
-
-        // Decoding Base64 String e
-        byte[] decoded = Base64.getDecoder().decode(passwordEncoded.getBytes());
-
-        System.out.println(Arrays.toString(decoded));
 
 
     }
