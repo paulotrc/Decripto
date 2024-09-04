@@ -17,7 +17,7 @@ public class MainBase64 {
 
         System.out.println("String encoded: " + passwordEncoded);
 
-        // Decoding Base64 String e
+        // Decoding Base64 String
         byte[] decoded = Base64.getDecoder().decode(passwordEncoded.getBytes());
 
         System.out.println("String decoded: " + new String(decoded));
